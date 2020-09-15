@@ -59,9 +59,13 @@ Assert.assertTrue(button.isDisplayed(), "verify that buttons are displayed");
     @Test
     public void test2(){
  driver.get("http://practice.cybertekschool.com/multiple_buttons");
-
+// regular findElement method will throw NSE if locator does not exist
  List<WebElement> buttons= driver.findElements(By.tagName("button"));
+
+
 //List<WebElement> buttons = driver.findElements(By.tagName("buttonaiysdgausda"));
+//by findElementS method, passing locator which does not exist, it will NOT throw NSE.
+//ALT+enter or OPTION+enter , ten one more enter for shortcut to create a variable.
 
         System.out.println("buttons.size() = " + buttons.size());
     }

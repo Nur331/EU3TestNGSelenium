@@ -14,7 +14,9 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class SelectDropdownTest {
+
     WebDriver driver;
+
     @BeforeMethod
     public void setUp(){
 
@@ -40,6 +42,8 @@ driver.get("http://practice.cybertekschool.com/dropdown");
 
 WebElement dropdownElement=driver.findElement(By.id("state"));
 
+// 2.create select object by passing that element as a constructor
+
   Select  stateDropdown= new Select(dropdownElement);
 // getOptions--> return all
         List<WebElement> options = stateDropdown.getOptions();
@@ -57,10 +61,11 @@ WebElement dropdownElement=driver.findElement(By.id("state"));
   driver.get("http://practice.cybertekschool.com/dropdown");
 
   WebElement dropdownElement = driver.findElement(By.id("state"));
-// 2.creat select object by passing that element as a constructor
+
   Select stateDropdown = new Select(dropdownElement);
 
-  // verify that first selection is Select a state
+
+        // verify that first selection is Select a state
   String expectedOption = "Select a State";
   String actualOption= stateDropdown.getFirstSelectedOption().getText();
   Assert.assertEquals(actualOption.toLowerCase(), expectedOption.toLowerCase(),"verify first selection");

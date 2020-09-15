@@ -30,25 +30,25 @@ public class NoSelectDropdown {
     public void test1(){
         driver.get("http://practice.cybertekschool.com/dropdown");
 
-        WebElement dropdownElement = driver.findElement(By.id("dropdownMenuLink"));
+WebElement dropdownElement = driver.findElement(By.id("dropdownMenuLink"));
 
 
-        //click the dropdown to see available options
-        dropdownElement.click();
-        //get the options with findElements method and finding common locator between them
-        List<WebElement> dropdownOptions = driver.findElements(By.className("dropdown-item"));
+//click the dropdown to see available options
+dropdownElement.click();
+//get the options with findElements method and finding common locator between them
+List<WebElement> dropdownOptions = driver.findElements(By.className("dropdown-item"));
 
-        //print size of options
-        System.out.println("dropdownOptions.size() = " + dropdownOptions.size());
-        Assert.assertEquals(dropdownOptions.size(),5,"verify size of options");
+//print size of options
+System.out.println("dropdownOptions.size() = " + dropdownOptions.size());
+Assert.assertEquals(dropdownOptions.size(),5,"verify size of options");
 
-        //print them one by one
-        for (WebElement option : dropdownOptions) {
-            System.out.println(option.getText());
-        }
+//print them one by one
+for (WebElement option : dropdownOptions) {
+ System.out.println(option.getText());
+}
 
-        //click yahoo
-        dropdownOptions.get(2).click();
+//click yahoo
+dropdownOptions.get(2).click();
 
     }
 
