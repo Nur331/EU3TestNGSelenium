@@ -47,6 +47,8 @@ public void test2() throws InterruptedException {
 driver.get("http://practice.cybertekschool.com/javascript_alerts");
 
 driver.findElement(By.xpath("//button[1]")).click();
+// if we don't use JS alert (but chrome notification),
+// it returns "NoAlertPresentException: no suh alert".
 
 //switch to JS alert pop up
 Alert alert=driver.switchTo().alert();

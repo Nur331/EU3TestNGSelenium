@@ -16,6 +16,7 @@ public class MultipleWindows {
 
     @BeforeMethod
     public void setUp(){
+
         driver = WebDriverFactory.getDriver("chrome");
     }
 
