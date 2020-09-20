@@ -18,20 +18,19 @@ public class ImplicitWaitExample {
     @BeforeMethod
     public void setUp(){
         driver = WebDriverFactory.getDriver("chrome");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
     }
 
     @AfterMethod
     public void tearDown() throws InterruptedException {
-        //Thread.sleep(2000);
+         Thread.sleep(2000);
         driver.quit();
     }
 
     @Test
     public void test1() throws InterruptedException {
         driver.get("http://practice.cybertekschool.com/dynamic_loading/4");
-
 
         WebElement element = driver.findElement(By.cssSelector("#finish"));
 

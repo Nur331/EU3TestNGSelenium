@@ -2,6 +2,7 @@ package com.cybertek.tests.day11_waits;
 
 
 import com.cybertek.utilities.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -24,8 +25,12 @@ public class ThreadSleepExample {
     }
 
     @Test
-    public void test1(){
+    public void test1() throws InterruptedException {
         driver.get("http://practice.cybertekschool.com/dynamic_loading/3");
+    Thread.sleep(6000);
+        driver.findElement(By.id("username")).sendKeys("MikeSmith");
+
+
 
     }
 }
