@@ -32,7 +32,7 @@ public class FileUploadTest {
         //locating choose file button
         WebElement chooseFile = driver.findElement(By.name("file"));
         //sending file with sendKeys method
-        chooseFile.sendKeys("/Users/jamaldemir/Desktop/file.txt");
+        chooseFile.sendKeys("/Users//Desktop/file.txt");
         //clicking upload button
         driver.findElement(By.id("file-submit")).click();
 

@@ -9,8 +9,8 @@ import org.testng.annotations.BeforeMethod;
 public class TestBase {
 
    protected WebDriver driver;
-   protected  Actions actions;
-   protected WebDriverWait wait;
+ //  protected  Actions actions;
+   //protected WebDriverWait wait;
 
 
     @BeforeMethod
