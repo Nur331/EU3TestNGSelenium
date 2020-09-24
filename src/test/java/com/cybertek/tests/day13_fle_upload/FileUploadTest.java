@@ -23,7 +23,7 @@ public class FileUploadTest {
     @AfterMethod
     public void tearDown() throws InterruptedException {
         Thread.sleep(2000);
-        //driver.quit();
+        driver.quit();
     }
 
     @Test
@@ -32,15 +32,42 @@ public class FileUploadTest {
         //locating choose file button
         WebElement chooseFile = driver.findElement(By.name("file"));
         //sending file with sendKeys method
-        chooseFile.sendKeys("/Users//Desktop/file.txt");
+
+        // how to get file from desktop:
+        //1.right click on the file
+        //2.Hold option key
+        //3.select option copy" file.txt" as pathname
+
+
+        // get DYNAMIC path:
+        String projectPath=System.getProperty("user.dir");
+        String filePath="src/test/resources/textfile.txt";
+        String fullPath=projectPath+"/"+filePath;
+
+        chooseFile.sendKeys(fullPath);
+
+        //  chooseFile.sendKeys("/Users/yasenalinur/Desktop/file.txt");
         //clicking upload button
         driver.findElement(By.id("file-submit")).click();
 
         //getting the file name from browser
         String actualFileName= driver.findElement(By.id("uploaded-files")).getText();
         //verify file name is file.txt
-        Assert.assertEquals(actualFileName,"file.txt");
+        Assert.assertEquals(actualFileName,"textfile.txt");
+
+
 
     }
+
+
+    // how to get your own property on your mac
+    @Test
+    public void test2(){
+        System.out.println(System.getProperty("os.name"));
+
+        System.out.println(System.getProperty("user.dir"));
+    }
+
+
 
 }
