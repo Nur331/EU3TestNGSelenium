@@ -1,7 +1,6 @@
-package com.cybertek.tests.day14_properties_driver_tests;
+package com.cybertek.tests.day15_properties_driver_tests;
 
 import com.cybertek.utilities.Driver;
-import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 

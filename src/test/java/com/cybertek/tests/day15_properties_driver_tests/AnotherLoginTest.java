@@ -1,4 +1,4 @@
-package com.cybertek.tests.day14_properties_driver_tests;
+package com.cybertek.tests.day15_properties_driver_tests;
 
 import com.cybertek.tests.TestBase;
 import com.cybertek.utilities.ConfigurationReader;

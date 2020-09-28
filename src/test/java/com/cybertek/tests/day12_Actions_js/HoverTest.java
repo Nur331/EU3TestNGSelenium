@@ -1,10 +1,11 @@
-package com.cybertek.tests.day11_waits;
+package com.cybertek.tests.day12_Actions_js;
 
 import com.cybertek.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -41,16 +42,37 @@ public class HoverTest {
 
         driver.get("http://practice.cybertekschool.com/hovers");
 
-          WebElement img1=driver.findElement(By.tagName("img"));
+          for (int i = 1; i <= 3; i++) {
 
-          Actions actions =new Actions(driver);
-          Thread.sleep(2000);
-          actions.moveToElement(img1).perform();
+            //  WebElement img1 = driver.findElement(By.tagName("img"));
 
 
+              String xpathImg="(//img)["+i+"]";
+              WebElement img=driver.findElement(By.xpath(xpathImg));
+              System.out.println("xpathImg = " + xpathImg);
+
+              Actions actions = new Actions(driver);
+              Thread.sleep(2000);
+              actions.moveToElement(img).perform();
 
 
 
+              String textXpath="//h5[.='name: user"+i+"']";
+              WebElement text1=driver.findElement(By.xpath(textXpath));
+              System.out.println("textXpath = " + textXpath);
+              Assert.assertTrue(text1.isDisplayed(), "verify user "+i+" is displayed");
+
+
+
+
+
+
+
+
+
+
+
+          }
 
 
 
