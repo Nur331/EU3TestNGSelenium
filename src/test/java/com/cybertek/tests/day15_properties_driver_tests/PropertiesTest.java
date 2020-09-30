@@ -20,17 +20,15 @@ public class PropertiesTest {
 
         System.out.println("url = " + url);
 
-
-
-
     }
 
-
 @Test
-    public void test2(){
-    WebDriver driver= WebDriverFactory.getDriver(ConfigurationReader.get("browser"));
+public void OpenBrowserWithConf(){
 
-    driver.get(ConfigurationReader.get("url"));
+WebDriver driver=WebDriverFactory.getDriver(ConfigurationReader.get("browser"));
+
+driver.get(ConfigurationReader.get("url"));
+
 
     String  username=ConfigurationReader.get("driver_username");
     String password = ConfigurationReader.get("driver_password");

@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class SingletonTest {
 
-            @Test
+        //    @Test
             public void test1(){
                 String s1 = Singleton.getInstance();
                 String s2 = Singleton.getInstance();
@@ -17,9 +17,9 @@ public class SingletonTest {
 
 
             @Test
-    public void test2(){
+    public void test2() throws InterruptedException {
                 WebDriver driver= Driver.get();
-
+    Thread.sleep(2000);
                 driver.get("https://google.com");
 
               // Driver.closeDriver();
