@@ -1,32 +1,26 @@
-package com.cybertek.tests;
+package com.cybertek.tests.day17_extent_reports;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+
+
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.cybertek.utilities.ConfigurationReader;
-import com.cybertek.utilities.Driver;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-import java.util.concurrent.TimeUnit;
+public class ExtentDemoTest {
 
-public class TestBase {
-    protected WebDriver driver;
-    protected Actions actions;
-    protected WebDriverWait wait;
-    protected ExtentReports report;
+    //this class is used for starting nad building reports
+    ExtentReports report;
     //this class is used to create HTML report file
-    protected ExtentHtmlReporter htmlReporter;
+    ExtentHtmlReporter htmlReporter;
     //this will  define a test, enables adding logs, authors, test steps
-    protected ExtentTest extentLogger;
+    ExtentTest extentLogger;
 
-    @BeforeTest
-    public void setUpTest(){
+    @BeforeMethod
+    public void setup(){
         //initialize the class
         report = new ExtentReports();
 
@@ -50,25 +44,30 @@ public class TestBase {
 
     }
 
-    @BeforeMethod
-    public void setUp(){
-        driver = Driver.get();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        actions = new Actions(driver);
-        wait = new WebDriverWait(driver,10);
-        driver.get(ConfigurationReader.get("url"));
+    @Test
+    public void test1(){
+        //give name to current test
+        extentLogger= report.createTest("TC123 Login as Driver Test");
+
+        //test steps
+        extentLogger.info("Open Chrome Browser");
+
+        extentLogger.info("Go to this URL");
+
+        extentLogger.info("Enter driver username password");
+
+        extentLogger.info("Click Login");
+
+        extentLogger.info("Verify logged in");
+
+        //pass()--> marks the test case as passed
+        extentLogger.pass("TC123 is passed");
 
     }
+
 
     @AfterMethod
-    public void tearDown() throws InterruptedException {
-        Thread.sleep(2000);
-        Driver.closeDriver();
-    }
-
-    @AfterTest
-    public void tearDownTest(){
+    public void teardown(){
         //this is when the report is actually created
         report.flush();
 

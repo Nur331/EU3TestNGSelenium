@@ -9,7 +9,7 @@ public class PositiveLoginTest extends TestBase {
 
 
     @Test
-    public void loginAsDriver(){
+    public void loginAsDriver2(){
 
         LoginPage loginPage = new LoginPage();
 
@@ -33,6 +33,13 @@ public class PositiveLoginTest extends TestBase {
         String username = ConfigurationReader.get("storemanager_username");
         String password = ConfigurationReader.get("storemanager_password");
 
+
+
+//        loginPage.usernameInput.sendKeys(username);
+//        loginPage.passwordInput.sendKeys(password);
+//        loginPage.loginBtn.click();
+
+// instead of these 3 lines code , we use just one method below
         loginPage.login(username,password);
 
         Assert.assertEquals(driver.getCurrentUrl(),"https://qa1.vytrack.com/");
@@ -51,6 +58,36 @@ public class PositiveLoginTest extends TestBase {
 
 
     }
+
+
+    @Test
+    public void loginAsSalesManager(){
+        LoginPage loginPage= new LoginPage();
+
+      loginPage.loginAsSalesManager();
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://qa1.vytrack.com/");
+
+
+
+    }
+
+    @Test
+    public void loginAsDriver(){
+
+        LoginPage loginPage= new LoginPage();
+
+        loginPage.loginAsDriver();
+
+        Assert.assertEquals(driver.getCurrentUrl(),"https://qa1.vytrack.com/");
+
+    }
+
+
+
+
+
+
 
 
 

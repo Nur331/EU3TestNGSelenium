@@ -15,11 +15,12 @@ public class LoginPage {
         PageFactory.initElements(Driver.get(),this);
     }
 
-    //driver.findElement(By.id("prependedInput"));
-    @FindBys({
-            @FindBy(id = "prependedInput"),
-            @FindBy(name ="_username")
-    })
+    //@FindBy equals to driver.findElement(By.id("prependedInput"));
+    //   @findAll -> OR logic  /  @findBys-> and logic
+   @FindAll({
+           @FindBy(id = "prependedInput"),
+           @FindBy(name="_username")
+   })
     public WebElement usernameInput;
 
     @FindBy(id = "prependedInput2")
@@ -56,6 +57,16 @@ public class LoginPage {
         loginBtn.click();
     }
 
+    public void loginAsSalesManager(){
+
+        String username = ConfigurationReader.get("salesmanager_username");
+        String password = ConfigurationReader.get("salesmanager_password");
+
+        usernameInput.sendKeys(username);
+        passwordInput.sendKeys(password);
+        loginBtn.click();
+
+    }
 
 
 }
