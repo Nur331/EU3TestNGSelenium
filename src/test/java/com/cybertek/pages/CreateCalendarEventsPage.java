@@ -57,5 +57,18 @@ public class CreateCalendarEventsPage extends BasePage {
         return new Select(repeatOptions);
     }
 
+   // this method in not on createCalendarEventPage
+    public Select returnSelect(WebElement element){
+        return new Select(element);
+    }
+
+
+
+
+
+
+
+
+
 
 }
