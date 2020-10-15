@@ -13,7 +13,6 @@ public class NegativeLoginTestWithReport extends TestBase {
         extentLogger = report.createTest("Wrong Password Test");
 
         LoginPage loginPage = new LoginPage();
-
         extentLogger.info("Enter Username: user1");
         loginPage.usernameInput.sendKeys("user1");
 
