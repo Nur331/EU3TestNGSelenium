@@ -24,22 +24,15 @@ public class PropertiesTest {
 
 @Test
 public void OpenBrowserWithConf(){
+    WebDriver driver = WebDriverFactory.getDriver(ConfigurationReader.get("browser"));
 
-WebDriver driver=WebDriverFactory.getDriver(ConfigurationReader.get("browser"));
+    driver.get(ConfigurationReader.get("url"));
 
-driver.get(ConfigurationReader.get("url"));
-
-
-    String  username=ConfigurationReader.get("driver_username");
+    String username = ConfigurationReader.get("driver_username");
     String password = ConfigurationReader.get("driver_password");
 
-
-
-
-driver.findElement(By.id("prependedInput")).sendKeys(username);
-driver.findElement(By.id("prependedInput2")).sendKeys(password+ Keys.ENTER);
-
-
+    driver.findElement(By.id("prependedInput")).sendKeys(username);
+    driver.findElement(By.id("prependedInput2")).sendKeys(password+ Keys.TAB);
 
 
     }

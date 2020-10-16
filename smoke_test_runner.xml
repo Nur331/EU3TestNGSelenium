@@ -4,10 +4,26 @@
 <suite name="Vytrack Automation Smoke Test" verbose="3">
     <test name="Vytrack Test">
         <packages>
-            <package name="com.cybertek.tests.day16_pom"></package>
-            <package name="com.cybertek.tests.day17_extent_reports"></package>
-            <package name="com.cybertek.tests.day15_properties_driver_tests"></package>
+<!--            <package name="com.cybertek.tests.day16_pom"></package>-->
+            <package name="com.cybertek.tests.day13_webtables"></package>
         </packages>
+
+<classes>
+    <class name="com.cybertek.tests.day17_extent_reports.ExtentDemoTest"></class>
+    <class name="com.cybertek.tests.day13_webtables.WebTablesExample">
+        <methods>
+            <include name="getAllCellInOneRow"></include>
+        </methods>
+    </class>
+</classes>
+
+
+
+
+
+
+
+
     </test>
 
 
