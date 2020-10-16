@@ -84,9 +84,6 @@ public class TestBase {
             extentLogger.fail(result.getThrowable());
 
 
-
-
-
         }
 
 
