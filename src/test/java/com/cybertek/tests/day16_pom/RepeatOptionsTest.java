@@ -6,6 +6,7 @@ import com.cybertek.pages.DashboardPage;
 import com.cybertek.pages.LoginPage;
 import com.cybertek.tests.TestBase;
 import com.cybertek.utilities.BrowserUtils;
+import com.cybertek.utilities.ConfigurationReader;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -33,7 +34,8 @@ public class RepeatOptionsTest extends TestBase {
 
     @Test
     public void test1(){
-    loginPage.loginAsDriver();
+
+loginPage.loginAsDriver();
 
     DashboardPage dashboardPage= new DashboardPage();
 
@@ -48,7 +50,7 @@ BrowserUtils.waitForClickablility(calendarEventsPage.createCalendarEvent, 5);
 calendarEventsPage.createCalendarEvent.click();
 
 CreateCalendarEventsPage createCalendarEventsPage=new CreateCalendarEventsPage();
-
+BrowserUtils.waitFor(5);
 createCalendarEventsPage.repeat.click();
 
 Assert.assertTrue(createCalendarEventsPage.days.isSelected(), "Verify repeat days is selected");

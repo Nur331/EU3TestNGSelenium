@@ -8,7 +8,63 @@
         </packages>
     </test>
 
+
+
+
+
+<!--    ways of running without/with some methods  -->
+<!--    <test name="Vytrack Smoke Test">-->
+<!--        <classes>-->
+<!--            <class name="com.cybertek.tests.day13_webtables.WebTablesExample">-->
+<!--                <methods>-->
+<!--                    <exclude name="getAllCellInOneRow"></exclude>-->
+<!--                    <include name="getASingleCellByIndex"></include>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+
+
+
+
+    <!--    running specface method-->
+<!--<test name="Vytrack Smoke Test">-->
+<!--    <classes>-->
+<!--        <class name="com.cybertek.tests.day13_webtables.WebTablesExample">-->
+<!--            <methods>-->
+<!--                <include name="getAllHeaders"></include>-->
+<!--            </methods>-->
+<!--        </class>-->
+<!--    </classes>-->
+<!--</test>-->
+
+<!--    -->
+<!--    -->
+<!--    -->
+
+
+<!--    -->
+<!--    -->
+<!--    ways of running classes-->
+<!--    <test name="Vytrack Smoke Test">-->
+<!--       <classes>-->
+<!--            <class name="com.cybertek.tests.day17_extent_reports.ExtentDemoTest"></class>-->
+<!--            <class name=" ........." >-->
+<!--        </classes> -->
+<!--    </test>-->
+<!--    -->
+<!--    -->
+
+
+
+    <!--        ways of running whole tests file-->
+    <!--<test name="Vytrack Smoke Test">-->
+    <!--<packages>-->
+    <!--    <package name=".*"></package>-->
+    <!--</packages>-->
+
+    <!--</test>-->
+    
 </suite>
-
-
 
